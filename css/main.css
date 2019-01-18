@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #3a7fd5, #6ebce2); 
-
 }
 .header-margin {
     margin-bottom: 50px;
@@ -27,10 +26,6 @@ select {
 #ed-buttons {
     margin: 0px 0 30px 0px;
 }
-#showbtn{
-    width: 200px;
-}
 #editRow {
     margin-right: 10px;
 }
-
