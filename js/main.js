@@ -1,12 +1,14 @@
 $(document).ready( function () {
     $('#myTable').DataTable();
-})
+} );
+
+// Add
 
 $(document).ready(function() {
-    var t = $('#myTable').DataTable();
+    let table = $('#myTable').DataTable();
  
     $('#addRow').on( 'click', function () {
-        t.row.add( [
+        table.row.add( [
             $('#date-input').val(),
             $('#category-input option:selected').text(),
             $('#comment').val(),
@@ -19,8 +21,10 @@ $(document).ready(function() {
 $('#addRow').click();
 
 
+// Delete
+
 $(document).ready(function() {
-  var table = $('#myTable').DataTable();
+  let table = $('#myTable').DataTable();
 
   $('#myTable tbody').on( 'click', 'tr', function () {
       if ( $(this).hasClass('selected') ) {
@@ -34,5 +38,17 @@ $(document).ready(function() {
 
   $('#deleteRow').click( function () {
       table.row('.selected').remove().draw( false );
+      $('#editRow').attr('disabled', true);
   } );
 } );
+
+// Edit Modal 
+
+$('#myTable tbody').on('click', 'tr', function () {
+    $('#editRow').removeAttr('disabled');
+  
+});
+ $('#closeModal').on('click', function(){
+     $('#editRow').attr('disabled', true);
+ });
+
